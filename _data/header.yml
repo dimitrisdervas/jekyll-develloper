@@ -1,0 +1,13 @@
+name: header
+container: default
+container-width: 12
+divs:
+   - class: left
+     width: 5
+     menu-limit: 3
+   - class: logo
+     width: 2
+     img: test.png
+   - class: right
+     width: 5
+     menu-limit: 3

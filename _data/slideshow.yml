@@ -1,0 +1,13 @@
+name: slideshow
+id: owl-carousel
+images:
+ - url: https://placeimg.com/640/480/any
+   alt: test
+ - url: https://placeimg.com/640/480/any
+   alt: test
+ - url: https://placeimg.com/640/480/any
+   alt: test
+ - url: https://placeimg.com/640/480/any
+   alt: test
+ - url: https://placeimg.com/640/480/any
+   alt: test

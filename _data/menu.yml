@@ -1,0 +1,14 @@
+- name: Home
+  url: /
+- name: Blogs
+  url: /
+- name: Posts
+  url: /
+- name: Pages
+  url: /
+- name: 5sliders
+  url: /
+- name: 3menus
+  url: /
+- name: Buy it Now
+  url: /

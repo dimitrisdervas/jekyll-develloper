@@ -1,0 +1,63 @@
+<footer class="site-footer">
+   {{ include.theme }}
+   {% for div in site.data.footer.divs %}
+           <div class="{{ div.class }}">
+<!--               Check if variable is empty -->
+              {% assign currentDiv = div.components %}   
+                       {% for htmlComponent in currentDiv %}
+                          {% if htmlComponent.component != nil %}
+                             {% capture htmlComponentHtml %}html_components/{{ htmlComponent.component }}{% endcapture %}  
+                             {% include {{ htmlComponentHtml }} data-theme=htmlComponent.theme %}
+                          {% endif %}
+                       {% endfor %}
+         </div>        
+      {% endfor %}
+</footer>  
+<script type="text/javascript" src="{{ site.baseurl }}/js/components.js "></script> 
+    <script>
+            $(document).ready(function() {
+
+           $("#owl-carousel1").owlCarousel( {
+               navigation : false, // Show next and prev buttons
+               slideSpeed : 300,
+               paginationSpeed : 400,
+               singleItem:true
+
+               // "singleItem:true" is a shortcut for:
+               // items : 1, 
+               // itemsDesktop : false,
+               // itemsDesktopSmall : false,
+               // itemsTablet: false,
+               // itemsMobile : false
+                    });
+                  $("#owl-carousel2").owlCarousel( {
+                     navigation : false, // Show next and prev buttons
+                     slideSpeed : 300,
+                     paginationSpeed : 400,
+                     singleItem:true
+
+                     // "singleItem:true" is a shortcut for:
+                     // items : 1, 
+                     // itemsDesktop : false,
+                     // itemsDesktopSmall : false,
+                     // itemsTablet: false,
+                     // itemsMobile : false
+                    });
+                $("#owl-carousel3").owlCarousel( {
+                  navigation : false, // Show next and prev buttons
+                  slideSpeed : 300,
+                  paginationSpeed : 400,
+                  singleItem:true
+
+                  // "singleItem:true" is a shortcut for:
+                  // items : 1, 
+                  // itemsDesktop : false,
+                  // itemsDesktopSmall : false,
+                  // itemsTablet: false,
+                  // itemsMobile : false
+                       });
+
+         });
+       
+    </script>
+<!--    <script src="https://maps.googleapis.com/maps/api/js?client={{site.data.gmap.api}}&v=3.20"></script> -->

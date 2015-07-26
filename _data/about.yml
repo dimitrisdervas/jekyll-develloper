@@ -1,0 +1,17 @@
+name:
+email:
+social:
+ - title: LinkedIn
+   url: https://www.linkedin.com/in/davidensinger
+   class: linkedin
+ - title: Twitter
+   url: https://twitter.com/davidensinger
+   class: twitter
+ - title: Facebook
+   url: https://twitter.com/davidensinger
+   class: twitter
+ - title: Pinterest
+   url: https://twitter.com/davidensinger
+   class: twitter
+rss:
+

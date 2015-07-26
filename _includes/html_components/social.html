@@ -1,0 +1,7 @@
+<!-- https://github.com/jlblatt/SVG-Social-Icons -->
+{% for icon in site.data.about.social %}
+  <a class="social-icon--link {{ icon.class }}" href="{{ icon.url }}">
+    {% include {{ icon.class | prepend: 'svg/' | append: '.svg' }} %}
+    <span class="social-icon--title visuallyHidden">{{ icon.title }}</span>
+  </a>
+{% endfor %}

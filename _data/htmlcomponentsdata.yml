@@ -1,0 +1,12 @@
+slideshow:
+    - data-id: slideshow-id
+    - data-id: owl-carousel1
+    - data-id: src-images
+    - data-id: theme
+
+posts-list:
+    - data-id: tag
+    - data-id: images
+    - data-id: content-type
+    
+social:

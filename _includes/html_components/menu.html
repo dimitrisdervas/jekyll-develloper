@@ -1,0 +1,3 @@
+{% for menu in site.data.menu  %}
+   <div class="menu-item" data-theme-menu="{{ include.data-theme }}"><a href="{{ site.baseurl }}/{{ menu.url }}">{{ menu.name }}</a></div>
+{% endfor %}

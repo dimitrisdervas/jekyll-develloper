@@ -1,0 +1,11 @@
+---
+---
+
+.{{ site.data.footer.name }} {        
+        {% for div in site.data.footer.divs %}
+           .{{ div.class }} {
+               @include span ( {{ div.width}} of {{ site.data.header.container-width }} );
+                
+           }
+        {% endfor %}
+     }

@@ -1,0 +1,27 @@
+
+- section:
+  name: media
+  container: fluid
+  container-width: 16
+  divs:
+   - class: media
+     width: 12
+   - class: sidebar
+     width: 4
+- section:
+  name: home-sidebar
+  container: default
+  container-width: 12
+  divs:
+   - class: content
+     width: 8
+     components:
+      - component: posts.html
+   - class: sidebar
+     width: 4
+     components:
+      - component: about.html
+      - component: social.html
+      - component: instragram.html
+ 
+     

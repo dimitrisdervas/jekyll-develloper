@@ -1,0 +1,43 @@
+$media: (
+  container: 100%,
+  columns: 3 1 ,
+  output: isolate,
+);   
+
+.media {
+        @include container( $media );
+        @include pad(10px);
+           .sidebar1 {
+               @include span ( 3 first  )
+           }     
+           .sidebar2 {
+               @include span ( 1 last )
+           }
+        
+     }
+
+$featured-blogpost: (
+  container: 70em,
+  output: auto,
+);
+
+.featured-blogpost {
+   @include container( $featured-blogpost );
+}
+
+$home-sidebar: (
+  container: 70em,
+  columns: 2 1 ,
+  output: isolate,
+);
+
+.home-sidebar {      
+        @include container( $home-sidebar );
+           .content {
+               @include span ( 2 first )
+           }       
+           .sidebar {
+               @include span ( 1 last )
+           }
+        
+     }

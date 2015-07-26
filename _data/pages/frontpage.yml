@@ -1,0 +1,64 @@
+- section:
+  name: media
+  divs:
+   - class: sidebar1
+     components:
+      - component: slideshow.html
+        data: 
+          slideshow-id: owl-carousel1
+          src-images: slideshow
+          theme: full
+   - class: sidebar2
+     components:
+      - component: slideshow.html
+        data:
+          slideshow-id: owl-carousel2
+          src-images: slideshow
+          theme: carousel
+- section:
+  name: featured-blogpost
+  divs:
+  - class: featured-blogpost
+    components: 
+     - component: posts-list.html
+       data:
+         images: slideshow
+         slideshow:     
+           slideshow-id: owl-carousel3
+           src-images: slideshow
+           theme: carousel
+         tag: featured
+         content-type: blog
+- section:
+  name: home-sidebar
+  divs:
+   - class: content
+     components:
+      - component: posts-list.html
+        data:
+          class: media-block
+          theme: media
+          content-type: blog
+          images: post
+          tag: world.travel
+          limit: 1
+      - component: posts-list.html
+        data:
+          class: media-block
+          theme: media        
+          content-type: blog
+          images: post
+          tag: podcasts
+          limit: 1
+      - component: posts-list.html
+        data:
+          class: card-block
+          theme: card        
+          content-type: blog
+          images: post
+          tag: cool.recipes
+          limit: 1
+   - class: sidebar
+     components:
+      - component: about.html
+      - component: social.html

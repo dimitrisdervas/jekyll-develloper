@@ -1,0 +1,8 @@
+<div id="{{ include.data-component.slideshow-id }}" class="owl-carousel">
+   {% for image in site.data.[include.data-component.src-images].images %}
+<!--    There is emphy whitespace before data-theme -->
+             <div class="slidehow-img" data-theme-slideshow=" {{ include.data-component.theme }}">
+               <img src="{{ image.url}}" alt="{{ image.url}}">        
+         </div>
+   {% endfor %}
+</div>

@@ -1,0 +1,32 @@
+$header: (
+  container: 70em,
+  columns: 12 ,
+  output: float,
+  debug: (
+    image: show,
+    color: rgba(#969696, .25),
+    output: background,
+    toggle: top right
+  ),
+);   
+
+.header {   
+        @include container( $header );        
+           .left {
+               @include span ( 5 of 12 first );
+                  .menu-item {
+                     @include gallery ( 4 of 12 );
+                 }
+           }
+           .logo {
+            @include span ( 2 at 6 of 12);
+           }
+           .right {
+               @include span ( 5 of 12 last );
+                  .menu-item {
+                     @include gallery ( 4 of 12 );
+                 }
+           }
+            
+        
+     }

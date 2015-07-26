@@ -1,0 +1,22 @@
+{
+  "name": "tools",
+  "version": "0.0.0",
+  "authors": [
+    "dimdervas <dimdervas@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "OwlCarousel": "~1.3.2",
+    "instafeed.js": "~1.3.2",
+    "susy": "~2.2.5",
+    "crayon": "*"
+  }
+}

@@ -1,0 +1,19 @@
+<header class="{{ site.data.header.name }}">
+   {% for div in site.data.header.divs %}
+           <div class="{{ div.class }}">
+              {% if div.class == "logo" %}
+               <img src="{{ site.baseurl}}/assets/images/logo/test.png" alt="">
+              {% else %}
+                 {% if forloop.first  %}
+                    {% for menu in site.data.menu limit: div.menu-limit  %}
+                       <div class="menu-item"><a href="{{ site.baseurl }}/{{ menu.url }}">{{ menu.name }}</a></div>
+                    {% endfor %}
+                 {% else %}
+                    {% for menu in site.data.menu limit: div.menu-limit offset: div.menu-limit   %}
+                       <div class="menu-item"><a href="{{ site.baseurl }}/{{ menu.url }}">{{ menu.name }}</a></div>
+                    {% endfor %}
+                 {% endif%}
+              {% endif %}
+            </div>
+      {% endfor %}
+</header>

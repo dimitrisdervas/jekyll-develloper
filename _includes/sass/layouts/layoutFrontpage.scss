@@ -1,0 +1,15 @@
+---
+---
+
+{% for section in site.data.pages.frontpage %}
+     .{{ section.name }} {
+        
+        @include container( {{ section.container }} );
+        {% assign current-section = section.divs %}
+        {% for div in current-section %}
+           .{{ div.class }} {
+               @include span ( {{ div.width }} of {{ section.columns }} )
+           }
+        {% endfor %}
+     }
+{% endfor %}

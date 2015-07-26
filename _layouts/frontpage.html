@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+{% for section in site.data.pages.frontpage %}
+        <section class="{{ section.name }}">
+           {% assign current-section = section.divs %}
+           {% for div in current-section %}
+              <div class="{{ div.class }}">
+                  
+                    {% assign currentDiv = div.components %}   
+                       {% for htmlComponent in currentDiv %}
+                          {% if htmlComponent.component != nil %}
+                             {% capture htmlComponentHtml %}html_components/{{ htmlComponent.component }}{% endcapture %}  
+                             {% include {{ htmlComponentHtml }} data-component=htmlComponent.data %}
+                 
+                          {% endif %}
+                       {% endfor %}
+           </div>
+           {% endfor %}
+        </section>
+   {% endfor %}

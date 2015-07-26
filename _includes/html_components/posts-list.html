@@ -1,0 +1,32 @@
+{% assign posts =  site.[include.data-component.content-type] | where:'tags', include.data-component.tag  %}
+{{include.data-component.limit}}
+<ul>
+   <li>
+     <div class="{{include.data-component.class}}" data-theme="{{include.data-component.theme}}">
+      {% for post in posts limit:{{include.data-component.limit}} %}
+      <!-- Check if show post images is slideshow -->
+         {% if include.data-component.images == 'slideshow' %}
+      <!-- Show slidehow -->
+      <!-- Where to get the images -->
+               <div id="{{ include.data-component.slideshow.slideshow-id }}" class="owl-carousel">
+                   {% for image in site.data.[include.data-component.slideshow.src-images].images %}
+            <!--    There is emphy whitespace before data-theme -->
+                     <div class="slidehow-img" data-theme-slideshow=" {{ include.data-component.slideshow.theme }}">
+                        <img src="{{ image.url}}" alt="{{ image.url}}">        
+                     </div>
+                  {% endfor %}
+               </div>   
+            {% else %}
+            <img src="https://placeimg.com/640/480/any" alt="{{ post.alt }}">
+         {% endif %}
+
+         <div class="post-rest">
+            <div class="title">{{ post.title }}</div>
+            <div class="text">{{ post.content }}</div>
+            <div class="tags">{{ post.tags }}</div>
+            <div class="date">{{ post.date }}</div>
+         </div>
+      {% endfor %}
+   </div>
+    </li>
+</ul>

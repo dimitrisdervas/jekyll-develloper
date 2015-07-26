@@ -1,0 +1,15 @@
+name: footer
+container: default
+container-width: 12
+divs:
+   - class: first
+     width: 3
+     components:
+       - component: menu.html
+         theme: footer
+   - class: second
+     width: 3
+   - class: third
+     width: 3
+   - class: third
+     width: 3
