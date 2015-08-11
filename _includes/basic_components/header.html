@@ -1,0 +1,24 @@
+<!-- Header class -->
+<div class="{{ site.data.basicBlocks.header.class }}">
+   <!-- Loop through the divs to create them -->
+   {% for div in site.data.basicBlocks.header.divs %}
+   <!-- Set the Css class for the div -->
+   <div class="{{ div.class }}">
+      <!-- Check inside for the html components for the current div -->
+      {% assign currentDiv = div.components %}   
+      {% for htmlComponent in currentDiv %}
+      <!-- If The html Component is not empty -->
+      {% if htmlComponent.component %}
+      <!-- Capture the html component template -->
+      {% capture htmlComponentHtml %}html_components/{{ htmlComponent.component }}{% endcapture %}  
+      <!-- Include the html component template and bring it's details -->
+      {% include {{ htmlComponentHtml }} component-data=htmlComponent.data %}                
+      {% endif %}
+      <!--                  End Component Loop -->
+      {% endfor %}
+      <!--                  End div.class  -->
+   </div>
+   <!--            End divs loop -->
+   {% endfor %}
+<!--    End Header div -->
+</div>

@@ -1,0 +1,12 @@
+.card-block {
+    display: flex;
+    flex-direction: column;
+   img {
+      margin: 1em;
+   }
+   .posts-rest {
+     display: flex;
+     flex-direction: column;
+     flex: 1 0 auto;
+   }
+}

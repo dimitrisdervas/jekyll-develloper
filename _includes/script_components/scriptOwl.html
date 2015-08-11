@@ -1,0 +1,20 @@
+-  $(document).ready(function() {
+               {% for conf in site.data.pages %}
+                  {% assign confData = conf[1] %}
+                  {% for divs in confData %}
+                     {% assign currentDiv = divs.divs %}
+                           {% for component in currentDiv %}
+                              {% assign slideshowComponent = component.components | where: 'component','slideshow.html' %}
+                                    {% for slideshow in slideshowComponent %}
+                                       {% assign slideshowData = slideshow.data %}
+                                       {%  assign slideshowOwlData = slideshowData.owl-data %}
+                $("#{{ slideshowData.slideshow-id }}").owlCarousel( {
+                                          {% for owlData in slideshowOwlData %}
+                                             {{ owlData[0] }} : {{ owlData[1]}} {% unless forloop.last%},{% endunless%}
+                                           {% endfor %}
+                });
+                                    {% endfor %}
+                           {% endfor %}
+                  {% endfor %}
+               {% endfor %}
+            });

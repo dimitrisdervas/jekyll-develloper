@@ -1,0 +1,111 @@
+- section: section
+  sectionClass: video-bg
+  divs:
+    - divClass: touch-video-image
+    - divClass: home-overlay
+    - divClass: header-intro centered-text
+      components:
+       - component: post.html
+         data:
+          content-type: slogan
+          post-title: slogan
+          title: test component Title
+          theme: test
+          class: testclasscomponent
+          id: testid
+          data-type: data-list
+          fields:
+            - field: title
+              data:
+               class: wow slideInUp
+            - field: subtitle
+              data:
+               class: test subtitle
+            - field: link
+              data:
+               class: link-test
+               path: index.html
+               label: link-label
+            - field: text
+- section: section
+  sectionClass: counting-wrapper
+  divs:
+   - divClass: counting
+     components:
+       - component: posts-list.html
+         data:
+           title: We design things
+           subtitle: Quick, creative, unique and effective
+           content-type: countTo
+           data-type: data-list
+           group:
+            - name: projects
+              fields:
+                - field: icon
+                  data:
+                    class: testicon
+                - field: count
+                  data:
+                  type: count
+                  to-field: number
+                  from-field: from
+                - field: title
+                  data: 
+                    class: testtitle
+- section: section
+  sectionClass: images-wrapper
+  divs:
+   - divClass: images
+     components:
+       - component: posts-list.html
+         data:
+           title: images
+           content-type: images
+           data-type: data-list
+           images_path: /assets/images/
+           fields:
+             - field: image
+               data:
+                 class: testimages
+- section: section
+  sectionClass: services-wrapper
+  divs:
+   - divClass: services
+     components:
+       - component: posts-list.html
+         data:
+           title: main services
+           subtitle: We are ipsum dolor sit amet, consectetur adipisicing elit.
+           content-type: main-services
+           data-type: data-list
+           group:
+            - name: service-project
+              fields:
+                - field: icon
+                  data:
+                    class: testicon
+                - field: title
+                  data: 
+                    class: testtitle
+                - field: text
+- section: section
+  sectionClass: works-wrapper
+  divs:
+   - divClass: works
+     components:
+       - component: posts-list.html
+         data:
+           title: recent works
+           subtitle: Brand, websites, applications, print and packages
+           content-type: work
+           fields:
+                - field: link
+                  data:
+                   path: posts
+                   subfields:
+                     - subfield: images
+                     - subfield: title
+                       data:
+                        class: testsubfield
+                   limit: 1
+                   link: post

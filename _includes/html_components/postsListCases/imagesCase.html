@@ -1,0 +1,13 @@
+<!-- Loop through the images of the post and set limit -->
+   {% for image in post.images limit: include.field_Data.limit  %}
+      <div class="post-image {{ include.field_Data.class }}" data-eq-pts="{{ include.field_Data.eqs }}">
+         {% if include.field_Data.link == post %}
+               <a href="{{ site.baseurl}}{{ post.url }}"> 
+            {% endif %}
+         <img src="{{ include.field_Data.images_path }}{{ image.image }}" alt="{{ image.alt }}">  
+           {% if include.field_Data.subfields %}
+                     {% include html_components/subfieldCases/subfieldCases.html %}
+                   {% endif %}
+         </a>           
+      </div>   
+   {% endfor %}

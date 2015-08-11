@@ -1,0 +1,54 @@
+section.portofolio {
+   @include full;
+   }
+.filter-categories {
+   margin: 2rem;
+   @include container();
+   ul {
+      display: flex;
+      align-items: center;
+      li {
+         display: flex;
+      }
+   }
+}
+#filters {
+   @include container();
+      ul li {
+          width: calc(100% / 6);
+          padding: 0 20px;
+          float: left;
+          overflow: hidden;
+          margin-bottom: 2rem;
+   }
+}
+
+/* Style the Filters */
+.filter-categories ul li {
+   cursor: pointer;
+   font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    color: #a3a3a3;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+    margin-right: 30px;
+    padding-left: 20px;
+    position: relative;
+    display: inline-block;
+    float: left;
+    transition: all .3s;
+   }
+.filter-categories ul li:before   {
+       content: '';
+       width: 10px;
+       height: 10px;
+       display: block;
+       position: absolute;
+       top: 1px;
+       left: 0;
+       background: url(http://demo.akronyms.net/arizona/html/images/controls/filter-btn.png) no-repeat;
+       -webkit-background-size: cover;
+       background-size: cover;
+       transition: all .3s;
+      }

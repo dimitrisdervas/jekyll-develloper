@@ -1,0 +1,207 @@
+<div class="footer-wrapper">
+
+
+   <!-- Loop through the page .yml file to create the html -->
+   {% for section in site.data.basicBlocks.footer %}
+   <!-- Check for custom staff -->
+              {% case section.name %}
+   <!-- Check for hr section -->
+                 {% when 'hr'%}
+                      <hr>
+   <!-- Check for custom html section -->
+                  {% when 'custom' %}           
+                 {% include {{section.path}} %}
+   <!--            End section.name case -->
+              {% else %}
+   <!-- Set Current Section to check for divs to create -->
+              {% assign current-section = section.divs %}
+   <!-- Set Section name -->
+           <footer class="{{ section.name }}">
+   <!-- Loop through the divs to create them -->
+              {% for div in current-section %}
+   <!-- Set the Css class for the div -->
+                 <div class="{{ div.class }}">
+   <!-- Check inside for the html components for the current div -->
+                       {% assign currentDiv = div.components %}   
+                          {% for htmlComponent in currentDiv %}
+   <!-- If The html Component is not empty -->
+                             {% if htmlComponent.component %}
+   <!-- Capture the html component template -->
+                                {% capture htmlComponentHtml %}html_components/{{ htmlComponent.component }}{% endcapture %}  
+   <!-- Include the html component template and bring it's details -->
+                                {% include {{ htmlComponentHtml }} component-data=htmlComponent.data %}                
+                             {% endif %}
+   <!--                  Emd Component Loop -->
+                          {% endfor %}
+              </div>
+   <!--            End divs loop -->
+              {% endfor %}
+   <!--            Close section -->
+         </footer>
+   {% endcase %}
+   <!-- End loop in sections -->
+ {% endfor %}
+</div>
+
+<!-- <script type="text/javascript" src="{{ site.baseurl }}/js/components.js"></script> 
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+<script type="text/javascript" src="{{ site.baseurl }}/js/leaflet-embed.js"></script> -->
+<!-- <script src="https://maps.googleapis.com/maps/api/js?client=AIzaSyAljVUJ_BKWrysX3Jsh7jP98qpRCShNuK4&v=3.20"></script>
+<script type="text/javascript" src="{{ site.baseurl }}/js/google-map.js"></script>  -->
+
+    <script>
+            $(document).ready(function() {
+//                Masonry
+$('.blog-list').masonry({
+  columnWidth: 'li',
+  itemSelector: 'li'
+});
+// Portofolio masonry
+// $('.list').masonry({
+//   columnWidth: 'li',
+//   itemSelector: 'li'
+// });
+                  //             Percentage Bars
+                  $('.percentage').each(function(i){
+                       $(this).width($(this).data('percent'));
+                  });  
+               });
+    </script>
+<!-- Auto create Scripts for Owl Carousel v2 -->
+<script>
+$(document).ready(function() {
+// LISTSJS
+// Add the name of the classes to serach within for words
+var options = {
+  valueNames: [ 'tag' ]
+};
+
+// Assign the list to Listjs - use the id of the container <div>
+var portofolioList = new List('filters', options);  
+// copied from here
+// http://pastebin.com/UPB095pk also in test.html
+// Create a listsjs Filter for each category
+// Create this only in the portofolio.html component page
+//          {% for conf in site.data.pages %}
+//          {% assign confData = conf[1] %}
+//             {% for divs in confData %}
+//                {% assign currentDiv = divs.divs %}
+//                {% for component in currentDiv %}
+//                   {% assign listjsComponent = component.components | where: 'component','posts-filter.html' %}
+//                    {% for portofolio in listjsComponent %}
+//                         {% assign listjsData = portofolio.data %}
+//                         {% assign listjsFilters = listjsData.filters %}                        
+//                           {% for filter in listjsFilters %} 
+// //                           Check for filter All or None
+//                                 {% if filter.filter == 'all' or filter.filter == 'none'%}
+//                                        $('#filter-{{ filter.filter }}').click(function() {
+//                                           portofolioList.filter();
+//                                               });
+//                                  {% else %}
+//                                          $('#filter-{{ filter.filter }}').click(function() {
+//                                             portofolioList.filter(function(item) {
+//                                               if (item.values().tag == "{{ filter.filter }}") {
+//                                                 return true;
+//                                               } else {
+//                                                 return false;
+//                                               }
+//                                             });
+//                                             return false;
+//                                        });
+//                                      {% endif %}
+//                            {% endfor %}
+//                       {% endfor %}
+//                  {% endfor %}
+//             {% endfor %} 
+//          {% endfor %}
+         
+//  Filter None - clear
+ $('#filter-none').click(function() {
+    featureList.filter();
+ });
+// OWL v2 SLIDESHOW
+//           {% for conf in site.data.pages %}
+//             {% assign confData = conf[1] %}
+//                {% for divs in confData %}
+//                   {% assign currentDiv = divs.divs %}
+//                   {% for component in currentDiv %}
+//                      {% assign slideshowComponent = component.components | where: 'component','slideshow.html' %}
+//                      {% for slideshow in slideshowComponent %}
+//                         {% assign slideshowData = slideshow.data %}
+//                         {% assign slideshowOwlData = slideshowData.owl-data %}
+//                         $("#{{ slideshowData.slideshow-id }}").owlCarousel( {
+//                            {% for owlData in slideshowOwlData %}
+//                            {{ owlData[0] }} : {{ owlData[1]}} {% unless forloop.last%},{% endunless%}
+//                            {% endfor %}
+//                         });
+//                      {% endfor %}
+//                   {% endfor %}
+//                {% endfor %}
+//             {% endfor %}
+
+//          {% for conf in site.data.pages %}
+//          {% assign confData = conf[1] %}
+//             {% for divs in confData %}
+//                {% assign currentDiv = divs.divs %}
+//                {% for component in currentDiv %}
+//                   {% assign counterComponent = component.components | where: 'component','countTo.html' %}
+//                       {% if counterComponent != nil %}
+//                       $(".countTo").countTo();
+//                        {% endif%}
+//                  {% endfor %}
+//             {% endfor %} 
+//          {% endfor %}
+//             });
+
+</script>
+<script>
+   (function( $ ){
+
+  $.fn.BaconIpsum = function( options ) {  
+
+    var settings = $.extend( {
+      'type' : 'meat-and-filler',
+      'start_with_lorem' : true,
+      'paras' : 3,
+      'sentences' : 0,
+      //Added the no_tags options (Joel Lord joel@engrenage.com)
+      'no_tags' : false      
+    }, options);
+
+    return this.each(function() {        
+
+      var $this = $(this);
+
+      $.getJSON('https://baconipsum.com/api/?callback=?', 
+        { 
+          'type':settings.type, 
+          'start-with-lorem':settings.start_with_lorem ? 1 : 0, 
+          'paras':settings.paras, 
+          'sentences':settings.sentences 
+        }, function(baconGoodness)
+      {
+        if (baconGoodness && baconGoodness.length > 0)
+        {
+          for (var i = 0; i < baconGoodness.length; i++) {
+            //Check if the rendering should be with or without tags
+            if(settings.no_tags) 
+              $this.append(baconGoodness[i]);
+            else 
+              $this.append('<p>' + baconGoodness[i] + '</p>');        }
+          }
+      });
+
+    });
+
+  };
+})( jQuery );
+</script>
+<script>
+    $(document).ready(function() {
+      $('#lorem').each(function(){ 
+         $(this).BaconIpsum();
+      });
+    });
+</script>
+<!--    <script src="https://maps.googleapis.com/maps/api/js?client={{site.data.gmap.api}}&v=3.20"></script> -->

@@ -1,0 +1,39 @@
+section.aboutus { 
+   @include layout( $history );
+   @include break;
+    @include container( 1170px );
+   .history-wrapper {
+     @include span ( 1 first );  
+      }
+   .skills {
+         @include span ( 1 last );
+     }
+}
+section.team-section {
+   @include layout( $symmetric );
+   @include container();
+   .team-gallery {
+       @include container();
+      ul {
+        
+            li {
+            @include gallery ( 4 of 12);
+         }
+      }
+   }
+}
+/* Section Services look in global */
+section.reviews {
+   @include full;
+   .reviews {
+      @include layout( $symmetric );
+      @include container();
+      }
+}
+section.clients {
+   @include full;
+   .clients {
+      @include layout( $symmetric );
+      @include container();
+      }
+}

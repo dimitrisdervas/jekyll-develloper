@@ -1,0 +1,30 @@
+- section:
+  name: footer
+  divs:
+   - class: footer-first section
+     components:
+       - component: posts-list.html
+         data:
+           theme: footer
+           content-type: blog
+           data-type: collection
+           fields:
+             - field: title
+               data:
+                 link: posts
+   - class: footer-second section
+     components:
+       - component: menu.html
+         data:
+           theme: footer
+           content-type: menu
+           data-type: data-list
+   - class: footer-third section
+     components:
+       - component: social.html
+       - component: footerDate.html
+       - component: logo.html
+         data:
+           path: http://html.blahlab.com/meuse/images/logo.png
+   - class: footer-fourth section
+

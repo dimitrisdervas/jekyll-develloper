@@ -1,0 +1,7 @@
+---
+---
+
+/* <!-- Owl carousel --> */
+{% include bower_components/owl.carousel.2/assets/owl.carousel.min.css %}
+/* Owl Theme */
+{% include bower_components/owl.carousel.2/assets/owl.theme.default.min.css %} 

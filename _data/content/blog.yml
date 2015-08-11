@@ -1,0 +1,16 @@
+- section:
+  name: portofolio
+  divs:
+   - class: portofolio
+     components:
+      - component: posts-list.html
+        data:
+          theme: frontpage
+          content-type: work
+          data-type: collection
+          fields:
+           - field: images
+             data:
+               link: posts
+               limit: 1
+           - field: title

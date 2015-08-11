@@ -1,0 +1,15 @@
+---
+---
+
+[
+  {% assign comma = false %}
+  {% for post in site.blog %}
+  {% unless post.hidden == true %}
+    {% if comma %},{% endif %}
+    {% assign comma = true %}
+    {
+      "title": "{{ post.title | escape_once  }}"
+    }
+  {% endunless %}
+  {% endfor %}
+]

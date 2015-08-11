@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+We must create separate [tag]/index.md page for each tag with the right frontmatter
+---
+layout: tags
+tags: [tag]
+---
+Another solution with React
+create json and react reads from url ex. test/tags#[tag] and renders the apropriate template - page
+
+
+http://blog.meinside.pe.kr/Adding-tag-cloud-and-archives-page-to-Jekyll/
+the same with the dates
+
+<ul class="tag-cloud">
+{% for tag in site.blog %}
+  <li style="font-size: {{ tag | last | size | times: 100 | divided_by: site.tags.size | plus: 70  }}%">
+    <a href="#{{ tag | first | slugize }}">
+      {{ tag | first }}
+    </a>
+  </li>
+{% endfor %}
+</ul>
+
+<div id="archives">
+{% for tag in site.blog %}
+  <div class="archive-group">
+    {% capture tag_name %}{{ tag | first }}{% endcapture %}
+    <h3 id="#{{ tag_name | slugize }}">{{ tag_name }}</h3>
+    <a name="{{ tag_name | slugize }}"></a>
+    {% for post in site.tags[tag_name] %}
+    <article class="archive-item">
+      <h4><a href="{{ root_url }}{{ post.url }}">{{post.title}}</a></h4>
+    </article>
+    {% endfor %}
+  </div>
+{% endfor %}
+</div>

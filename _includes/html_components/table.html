@@ -1,0 +1,43 @@
+
+<!-- 
+First separate site.data or collections
+tag or not tag
+second check image plain or slideshow             
+show rest of data
+if site.data check the rest of the variables to print 
+-->
+<!-- include.component-data = all the data for the component -->
+
+<!-- Assign Content Type - Collection -->
+<!-- DEBUG -->
+   <!-- show what variables it calls for the component -->
+   
+<!-- {{ include.component-data }}
+   {{ include.component-data.limit }}
+   {{ include.component-data.content-type }} 
+   {{ include.component-data.fields }}  -->
+
+
+
+ {% assign posts = site.data.content.[include.component-data.content-type] %}
+
+
+<ul>
+<!--       Assign CSS class and data-theme class -->
+     <div class="{{include.component-data.class}}" data-theme="{{include.component-data.theme}}">
+<!--        Loop through the posts and set a limit if there it exists -->
+      {% for post in posts limit:{{include.component-data.limit}} %}
+<!--         Loop each field in the component -->
+        {% assign fields = include.component-data.fields %}
+        {% for name in fields  %}
+<!--         Check what type of field we are prinitng -->
+         <!--  IMAGES FIELD    -->
+         <!--     Check if the field is about images -->    
+              <div class="{{name.field}}">{{ post.[name.field] }} </div>
+           
+<!--         End case of fields -->
+<!-- End loop in fields -->
+         {% endfor %}
+<!-- End loop in posts -->
+      {% endfor %} 
+   </div>

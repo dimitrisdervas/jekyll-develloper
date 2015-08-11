@@ -1,0 +1,35 @@
+     <!-- Just print the fields -->
+              {% for field in fields  %}
+<!--  Check what type of field we are prinitng -->
+                     {% case field.field  %}
+   <!-- Multiple images --> 
+                              {% when 'images' %}
+                                {% include html_components/postsListCases/imagesCase.html field_Data=field.data field_Field=field.field content-type=include.component.content-type %}
+   <!--  One images --> 
+                              {% when 'image' %}
+                                {% include html_components/postsListCases/imageCase.html field_Data=field.data field_Field=field.field content-type=include.component.content-type %}
+   <!-- LINK  -->                 
+                               {% when 'link' %}
+                                {% include html_components/postsListCases/linkCase.html field_Data=field.data field_Field=field.field %}
+   <!-- PERCENTAGE -->
+                              {% when 'percentage' %}
+                                {% include html_components/postsListCases/percentageCase.html field_Data=field.data field_Field=field.field %}
+   <!--   TEXT -->
+                              {% when 'text' %}
+                                {% include html_components/postsListCases/textCase.html field_Data=field.data field_Field=field.field  content-type=include.component.content-type %}
+   <!-- TITLE  -->
+                              {% when 'title' %}
+                                {% include html_components/postsListCases/titleCase.html field_Data=field.data field_Field=field.field %}
+   <!-- ICON  -->             
+                              {% when 'icon' %}
+                                {% include html_components/postsListCases/iconCase.html field_Data=field.data field_Field=field.field %}        
+   <!-- COUNT  -->             
+                              {% when 'count' %}
+                                {% include html_components/postsListCases/countCase.html field_Data=field.data field_Field=field.field %}        
+                              {% else %}
+<!-- Print every field as separate div -->
+                                  <div class="{{field.field}} {{ field.data.class }}">{{ post.[field.field] }}</div>
+<!--  End case of fields -->
+                         {% endcase %}
+<!--  End loop in fields -->
+                  {% endfor %}

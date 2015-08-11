@@ -1,0 +1,8 @@
+{% if include.fonts >= 2 %}
+
+<link rel='stylesheet' type='text/css'
+href='http://fonts.googleapis.com/css?family={{ include.font1}}'>
+{% else %}
+<link rel='stylesheet' type='text/css'
+href='http://fonts.googleapis.com/css?family={{ include.font1}}|{{ include.font2}}'>
+{% endif %}

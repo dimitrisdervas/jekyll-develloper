@@ -1,0 +1,11 @@
+   {% case include.component-data.groupdiv %}
+      {% when 'div' %}
+         {% capture groupdiv-div %}<div>{% endcapture%}
+         {% capture groupdiv-div-end %}</div>{% endcapture%}
+      {% when 'list' %}
+         {% capture groupdiv-ul %}<ul>{% endcapture%}
+         {% capture groupdiv-li %}<li>{% endcapture%}
+         {% capture groupdiv-li-end %}</li>{% endcapture%}
+         {% capture groupdiv-ul-end %}</ul>{% endcapture%}
+      {% else%}
+         {% endcase %}

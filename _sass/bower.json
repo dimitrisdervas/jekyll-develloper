@@ -1,0 +1,22 @@
+{
+  "name": "sass",
+  "version": "0.0.0",
+  "authors": [
+    "dimdervas <dimdervas@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "susy": "~2.2.5",
+    "normalize.css": "~3.0.3",
+    "materialize": "~0.97.0",
+    "material-design-lite": "~1.0.2",
+    "crayon": "*"
+  }
+}

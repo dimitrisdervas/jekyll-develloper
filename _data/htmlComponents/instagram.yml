@@ -1,0 +1,3 @@
+tagName: karate
+clientId: 555424574
+templateImg: '<a href="{{link}}"><img src="{{image}}" /></a>'

@@ -1,0 +1,33 @@
+section.blog {
+   .blog .blog-list ul  li {
+         width: calc(100% / 6);
+          padding: 0 20px;
+          float: left;
+          overflow: hidden;
+          margin-bottom: 2rem;
+         img {
+            transition: .8s;
+            opacity: 0.3;
+         }
+         img:hover {
+            opacity: 1;
+         }
+         .title {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1rem;
+            line-height: 1.4;
+            font-weight: 600;
+            a {
+               color: #333;
+            }            
+         }
+         .date {
+            font-size: 0.78571rem;
+             text-transform: uppercase;
+             letter-spacing: 3px;
+             color: #ccc;
+             margin-bottom: 5px;
+         }
+      }
+   }

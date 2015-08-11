@@ -1,0 +1,10 @@
+<!-- Assign CSS class and data-theme class -->
+     {% if include.component-data.id %}
+           {% capture componentID %}id="{{include.component-data.id}}"{% endcapture %}
+        {% endif %}
+     {% if include.component-data.class %}
+           {% capture componentClass %}class="{{include.component-data.class}}"{% endcapture %} 
+        {% endif %}
+     {% if include.component-data.theme %}
+        {% capture componentTheme %}data-theme="{{include.component-data.theme}}"{% endcapture %} 
+     {% endif %}

@@ -1,0 +1,35 @@
+$susy: (
+  flow: ltr,
+  math: fluid,
+  output: float,
+  gutter-position: after,
+  container: 1170px,
+  container-position: center,
+  columns: 4,
+  gutters: .25,
+  column-width: false,
+  global-box-sizing: content-box,
+  last-flow: to,
+);
+
+$symmetric: (
+  columns: 12,
+  container: 1170px,
+  gutters: .35,
+  output: float,
+/*   debug: (image: show) */
+);
+
+$header: (
+  columns: 1 1 2,
+  container: auto,
+  output: isolate,
+  
+);   
+
+$history: (
+  columns: 2 1,
+   container: auto,
+   gutters: 0.1,
+  output: isolate
+)

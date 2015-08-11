@@ -1,0 +1,60 @@
+- section:
+  name: main-services
+  divs:
+   - class: services
+     components:
+      - component: posts-list.html
+        data:
+          title: main services
+          theme: frontpage
+          content-type: main-services
+          data-type: data-list
+          fields:
+           - field: icon
+           - field: title
+           - field: text
+- section:
+  name: other-services
+  divs:
+   - class: services
+     components:
+      - component: slideshow.html      
+        data:
+          title: other services
+          slideshow-id: owl-carousel4
+          slideshow-src: other-services
+          slideshow-data: text
+          owl-data:
+            items: 3
+            margin: 20
+            loop: true
+            autoplay: true
+          fields:
+           - field: icon
+           - field: title
+           - field: text
+- section:
+  name: prices
+  divs:
+   - class: prices
+     components:
+      - component: posts-list.html
+        data:
+          theme: frontpage
+          content-type: prices
+          data-type: data-list
+          group: 
+           - name: group1
+             fields:
+              - field: title
+              - field: description    
+              - field: price
+           - name: group2
+             fields:    
+              - field: storage      
+              - field: workspaces       
+              - field: private forums        
+              - field: link
+                data:
+                label: start trial
+           

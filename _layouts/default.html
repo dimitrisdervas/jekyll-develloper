@@ -1,0 +1,23 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html>
+
+  {% include basic_components/head.html %}
+
+  <body>
+         <div class="page">
+
+                  {% include basic_components/page.html yaml-file='header' %}       
+                  
+                  {{ content }}
+                  
+                  {% include basic_components/footer.html  %}
+
+               </div>
+ 
+  </body>
+
+</html>

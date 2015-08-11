@@ -1,0 +1,26 @@
+
+<!--    // Loop through the divs in current page file -->
+   {% for divs in site.data.pages.[page.confFile]  %}
+<!-- // Select current div -->
+      {% assign currentDiv = divs.divs %}
+<!-- // Loop through the components in  current div -->
+         {% for comp in currentDiv %}
+<!-- Select compoenents -->
+         {% assign componentData = comp.components %}
+<!-- Loop through the components -->
+            {% for componentName in componentData %}
+<!-- Cases for each component -->
+               {% case componentName.component %}
+                
+                        {% when 'slideshow.html' %}
+   <script type="text/javascript" src="{{ site.baseurl }}/{% include bower_components/owl.carousel.2/owl.carousel.min.js %}"></script>
+
+                        {% when 'countTo.html %}
+
+                        {% endcase %}
+               {% endfor %}
+
+            {% endfor %}
+      {% endfor %}
+
+

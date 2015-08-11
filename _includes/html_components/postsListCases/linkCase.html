@@ -1,0 +1,20 @@
+<!-- LINK FIELD -->
+              <div class="{{include.field_Data.field}} {{ include.field_Data.class }}">
+<!-- LINK PATH -- Check for the link path if it is about posts or not -->
+                           {% case include.field_Data.path %}
+                                {% when 'posts' %}
+                                     <a href="{{ site.baseurl}}{{ post.url }}">
+                                {% when nill %}
+                                     <a href="{{ site.baseurl}}{{ post.link }}">  
+                                {% else %}
+                                      <a href="{{ include.field_Data.path }}">
+                              {% endcase %}
+<!-- Check if there is an image inside -->
+                                         {% if include.field_Data.image %}
+                                               <img src="{{ include.field_Data.image }}" alt="include.field_Data.imgalt">
+                                            {% endif %}
+<!--  LINK LABEL -->
+                      {{ include.field_Data.label }}
+                                        </a>
+                                        </div>
+              

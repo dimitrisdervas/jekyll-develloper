@@ -1,0 +1,11 @@
+<div class="timer">
+   <ul>
+   {% assign contentTimer = site.data.[include.component-data.content-type] %}
+   {% for project in contentTimer %}
+     <li>
+        <div class="c" data-from="0" data-to="{{ project.to }}" data-speed="5000" data-refresh-interval="50"></div>
+        <div class="title">{{ project.title }} </div>
+      </li>
+   {% endfor %}
+       </ul>
+</div>

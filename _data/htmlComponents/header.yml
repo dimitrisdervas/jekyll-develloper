@@ -1,0 +1,21 @@
+- section:
+  name: header
+  class: android-header mdl-layout__header mdl-layout__header--waterfall
+  divs:
+  
+   - class: logo
+     components:
+      - component: logo.html
+        data:
+          image: http://www.getmdl.io/templates/android-dot-com/images/android-logo.png
+   - class: menu
+     components:
+      - component: mdl/menu.html
+        data:
+          content-type: menu
+   - class: search
+     components:
+       - component: mdl/search-bar.html
+   - class: dots-menu
+     components:
+       - component: mdl/dots-menu.html

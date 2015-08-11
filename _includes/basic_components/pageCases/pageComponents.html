@@ -1,0 +1,24 @@
+<!-- Check inside for the html components for the current div -->
+                    {% assign currentDiv = div.components %} 
+                    {% for htmlComponent in currentDiv %}
+<!-- CheckIF we have custom html code code - short e.x. <i class="material-icons">menu</i> -->
+                       {% if htmlComponent.html %}{{ div.html }}{% endif %}
+<!-- If The Component is not empty -->
+                       {% if htmlComponent.component %}
+<!-- Capture the html component template -->
+                          {% capture htmlComponentHtml %}html_components/{{ htmlComponent.component }}{% endcapture %}
+<!-- TRY to print here Title -->
+<!-- COMPONENT TITLE -->
+                          {% include html_components/component_includes/componentTitle.html component-data=htmlComponent.data %}
+<!-- COMPONENT DIV OPTIONS -->
+                           {% include html_components/component_includes/componentDivOptions.html component-data=htmlComponent.data %}
+<!-- COMPONENT WRAPPER DIV -->
+                           <div {{ componentID }} {{ componentClass }} {{ componentTheme }} >
+<!-- COMPONENT CONTENT -->
+<!-- Include the html component template and bring it's details -->
+                              {% include {{ htmlComponentHtml }} component-data=htmlComponent.data %} 
+                           </div>
+<!-- End if checking if there is a component                  -->
+                          {% endif %}
+<!--  End Component Loop -->
+                       {% endfor %}

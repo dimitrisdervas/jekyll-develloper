@@ -1,0 +1,60 @@
+
+.other-services {
+
+   i {
+    color: #F9CE06;
+    font-size: 36px;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    margin-bottom: 30px;
+   }
+}
+.prices {
+
+   ul { 
+      display: flex;
+         li{
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            margin: 0 1rem 60px;
+            border: 1px solid #e0e0e0;
+    padding: 0 15px 15px;
+    background-color: #fff;
+    text-align: center;
+      }
+   }
+   .group1 {
+          border-top: 4px solid #bbb;
+    padding: 20px 0 0;
+      .title {
+         font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0 0 5px;
+      }
+      .description {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #999;
+      }
+      .price {
+    border-bottom: 1px solid #d0d0d0;
+    margin: 0;
+    padding-bottom: 20px;
+         font-size: 70px;
+    color: #333;
+    font-style: normal;
+         line-height: 70px;
+      }
+   }
+   .group2 {
+          background: #eee;
+    color: #999;
+      :nth-child(odd) {
+       background: #f7f7f7;
+      
+      }
+   }
+}

@@ -1,0 +1,25 @@
+- section:
+  name: work
+  divs:
+  - class: work
+    components: 
+     - component: post.html
+       data:
+         fields:
+           - field: images
+             data:
+               class: slideshow
+               limit: 1
+           - field: title
+             data:
+               class: work-title
+           - field: text
+           - field: client
+             data:
+               label: client           
+           - field: date
+             data:
+               label: date
+           - field: link
+             data: 
+               label: visit website

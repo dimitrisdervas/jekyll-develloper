@@ -1,0 +1,32 @@
+- section:
+  name: blog
+  title: blog masonry
+  subtitle: where we share our thoughts
+  divs:
+   - class: blog
+     components:
+      - component: posts-list.html
+        data:
+          view: masonry
+          class: blog-list
+          theme: frontpage
+          content-type: blog
+          data-type: collection
+          fields:
+           - field: images
+             data:
+               link: posts
+               limit: 1
+           - field: date
+           - field: title
+             data:
+               link: posts
+           - field: text
+             data:
+               text: teaser
+               words: 20
+           - field: link
+             data:
+               label: read more
+               link: posts
+              

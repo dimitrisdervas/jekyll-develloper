@@ -1,0 +1,12 @@
+- client: yahoo
+  image: http://demo.akronyms.net/arizona/html/images/logo-6.png
+- client: google
+  image: http://demo.akronyms.net/arizona/html/images/logo-5.png
+- client: linkedin
+  image: http://demo.akronyms.net/arizona/html/images/logo-4.png
+- client: twitter
+  image: http://demo.akronyms.net/arizona/html/images/logo-3.png
+- client: yahoo
+  image: http://demo.akronyms.net/arizona/html/images/logo-2.png
+- client: google
+  image: http://demo.akronyms.net/arizona/html/images/logo-1.png

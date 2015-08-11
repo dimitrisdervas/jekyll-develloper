@@ -1,0 +1,26 @@
+- section:
+  name: blog
+  divs:
+   - class: blog
+     components:
+      - component: posts-list.html
+        data:
+          groupby: tags
+          theme: frontpage
+          content-type: blog
+          data-type: collection
+          fields:
+           - field: images
+             data:
+               link: posts
+               limit: 1
+           - field: title
+             data:
+               link: posts
+           - field: tag
+           - field: date
+           - field: text
+           - field: link
+             data:
+               label: read more
+               link: posts

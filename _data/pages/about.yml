@@ -1,0 +1,106 @@
+- section:
+  name: aboutus
+  title: about us
+  subtitle: extraordinary team and studio
+  divs:
+   - class: history-wrapper
+     components:
+      - component: custom.html
+        data:
+          path: custom_html/history.html
+   - class: skills
+     components:
+       - component: posts-list.html
+         data:     
+           theme: frontpage
+           content-type: skills
+           data-type: data-list
+           fields:
+            - field: skill
+            - field: percentage
+     
+- section:
+  name: team-section
+  divs:
+   - class: team
+     components:
+      - component: posts-list.html
+        data:
+          class: "team-gallery"
+          content-type: team
+          data-type: data-list
+          limit: 3
+          group:
+           - name: image-wrapper
+             fields:
+              - field: image
+              - field: name
+           - name: details
+             fields:    
+              - field: jobtitle      
+              - field: text
+- section:
+  name: projects
+  divs:
+   - class: overlay
+   - class: counto-component
+     components:
+      - component: countTo.html
+        data:   
+          theme: frontpage
+          content-type: countTo
+          data-type: data-list
+- section:
+  name: services
+  divs:
+   - class: services
+     components:
+      - component: posts-list.html
+        data:
+          theme: frontpage
+          content-type: main-services
+          data-type: data-list
+          limit: 3
+          fields:
+           - field: icon
+           - field: title
+           - field: text
+- section:
+  name: reviews
+  divs:
+   - class: reviews
+     components:
+      - component: slideshow.html
+        data:
+          slideshow-id: owl-carousel2
+          slideshow-src: reviews
+          slideshow-data: text         
+          title: reviews       
+          theme: text
+          limit: 4
+          owl-data:
+            items: 1
+            loop: true
+            autoplay: true
+          fields:
+           - field: review
+           - field: client
+- section:
+  name: clients
+  divs:
+   - class: overlay
+   - class: clients
+     components:
+     - component: slideshow.html
+       data:
+         slideshow-id: owl-carousel3
+         slideshow-src: clients
+         slideshow-data: images
+         class: slideshow-img
+         owl-data:
+           items: 3
+           loop: true
+           autoplay: true
+           dots: false
+         fields:
+          - field: image

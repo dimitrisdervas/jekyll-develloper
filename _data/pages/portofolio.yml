@@ -1,0 +1,26 @@
+- section:
+  name: portofolio
+  divs:
+   - class: portofolio
+     components:
+      - component: posts-filter.html
+        data:
+          title: portofolio
+          subtitle: see our creativity
+          id: filters
+          theme: frontpage
+          content-type: work
+          data-type: collection
+          tag: tag
+          filters:
+           - filter: all
+           - filter: branding
+           - filter: photography
+           - filter: design
+          fields:
+           - field: images
+             data:
+               link: posts
+               limit: 1
+           - field: tag
+             data:

@@ -1,0 +1,10 @@
+- section: header
+  name: header
+  sectionClass: jekeo-header
+  divs:
+   - divClass: logo
+     components:
+       - component: logo.html
+         data:
+           text: jekeo
+  
