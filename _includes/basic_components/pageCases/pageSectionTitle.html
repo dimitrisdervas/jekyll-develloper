@@ -1,11 +1,20 @@
 <!-- Section Title -->
          <!-- Check if there is a title for the html section and print it-->
-         {% if section.title %}
-         <div class="section-header section-header--{{ section.name }}">
-            <div class="section-title">{{ section.title }} {{ section.separator}} {% if section.title-data.link %}<a href="{{site.baseurl}}{{ section.title-data.link }}">{{ section.title-data.label }}</a>{% endif %}</div>
-            <!-- section SUBTITLE -->
-            {% if section.subtitle %}
-            <div class="section-subtitle">{{ section.subtitle }} {{ section.separator}} {% if section.subtitle-data.link %}<a href="{{site.baseurl}}{{ section.subtitle-data.link }}">{{ section.subtitle-data.label }}</a>{% endif %}</div>
+         {% if section.sectionTitle %}
+            <div class="section-title section-title--{{ section.name }}">
+               <div class="section-title">{{ section.sectionTitle }} {{ section.sectionTitle.data.ssectionTitle.data.separator}} 
+                  {% if section.sectionTitle.data.link %}
+                     <a href="{{site.baseurl}}{{ section.title-data.link }}">{{ section.title-data.label }}</a>
+                  {% endif %}
+               </div>
+               <!-- section SUBTITLE -->
+               {% if section.sectionSubtitle %}
+                  <div class="section-subtitle section-subtitle--{{ section.name }}">
+                        {{ section.sectionSubtitle }} {{ section.sectionSubtitle.data.separatorsectionSubtitle.data.separator}}
+                        {% if section.sectionSubtitle.data.link %}
+                        <a href="{{site.baseurl}}{{ section.subtitle-data.link }}">{{ section.sectionSubtitle.data.label }}</a>
+                        {% endif %}
+                     </div>
+                  {% endif %}
+               </div>
             {% endif %}
-         </div>
-         {% endif %}

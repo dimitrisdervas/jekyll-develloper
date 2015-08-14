@@ -22,8 +22,27 @@ compress_html:
   profile: true
   ignore:
     envs: [local]
+    
+pluginsSourceFile: pluginsSourceFiles
+
+#page_gen:
+#  - data: 'productsYML'
+#    template: 'product'
+#    name: 'sku'
+#    dir: 'products'
+
+# Build settings
+markdown: kramdown
+
+
 
 collections:
+  docs:
+    output: true
+    permalink: /docs/:path/
+  components:
+    output: true
+    permalink: /components/:path/
   blog:
     output: true
     permalink: /blog/:path/

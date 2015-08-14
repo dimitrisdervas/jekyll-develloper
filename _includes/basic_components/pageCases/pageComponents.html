@@ -2,6 +2,7 @@
                     {% assign currentDiv = div.components %} 
                     {% for htmlComponent in currentDiv %}
 <!-- CheckIF we have custom html code code - short e.x. <i class="material-icons">menu</i> -->
+<!-- HTML COMPONENT - INLINE HTML CODE -->
                        {% if htmlComponent.html %}{{ div.html }}{% endif %}
 <!-- If The Component is not empty -->
                        {% if htmlComponent.component %}
@@ -10,10 +11,20 @@
 <!-- TRY to print here Title -->
 <!-- COMPONENT TITLE -->
                           {% include html_components/component_includes/componentTitle.html component-data=htmlComponent.data %}
-<!-- COMPONENT DIV OPTIONS -->
-                           {% include html_components/component_includes/componentDivOptions.html component-data=htmlComponent.data %}
 <!-- COMPONENT WRAPPER DIV -->
-                           <div {{ componentID }} {{ componentClass }} {{ componentTheme }} >
+                            <!-- Assign CSS class and data-theme class -->
+     {% if include.component-data.id %}
+           {% capture componentID %}id="{{include.component-data.id}}"{% endcapture %}
+        {% endif %}
+     {% if include.component-data.class %}
+           {% capture componentClass %}class="{{include.component-data.class}}"{% endcapture %} 
+        {% endif %}
+     {% if include.component-data.theme %}
+        {% capture componentTheme %}data-theme="{{include.component-data.theme}}"{% endcapture %} 
+     {% endif %}
+
+<!-- COMPONENT WRAPPER DIV -->
+   <div {{ componentID }} {{ componentClass }} {{ componentTheme }} >
 <!-- COMPONENT CONTENT -->
 <!-- Include the html component template and bring it's details -->
                               {% include {{ htmlComponentHtml }} component-data=htmlComponent.data %} 

@@ -1,8 +1,11 @@
 <!-- TITLE CASE -->
 <div class="{{ include.field_Data.class }}">
-      {% if include.field_Data.link == 'posts' %}
+      {% case include.field_Data.link %}
+      {% when 'posts' %}
             <a href="{{ site.baseurl}}{{ post.url }}">{{ post.[include.field_Field] }}</a>
+      {% when 'products' %}
+             <a href="{{ site.baseurl}}products/{{ post.sku }}.html">{{ post.[include.field_Field] }}</a>
       {% else %}
            {{ post.[include.field_Field] }} 
-      {% endif %}
+      {% endcase %}
    </div>

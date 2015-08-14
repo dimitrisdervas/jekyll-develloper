@@ -1,0 +1,71 @@
+- section: #DEFAULT:section - DEFAULT:section - HTML eleement to use for the section div/ header /section
+  customHtmlName: services # OPTIONAL OPTIONAL custom  without the wrapper div or hr
+  customHtmlPath: #OPTIONAL - OPTIONAL - in case of name:custom we write th epath to html in includes for the custom code
+  sectionTitle: #OPTIONAL - OPTIONAL - it will printed over the rest of the section
+  data:
+     label: 
+     link: # link to {{site.baseurl}}/anywhere
+    separator: # separate titlr - subtitle - link
+    separator: # separate titlr - subtitle - link
+  sectionSubtitle: #OPTIONAL - section subtitle#OPTIONAL - section subtitle
+  data:
+    label: 
+    link: # link to {{site.baseurl}}/anywhere
+    separator: # separate titlr - subtitle - link
+  data:
+    label: 
+    link: # link to {{site.baseurl}}/anywhere
+    separator: # separate titlr - subtitle - link
+  sectionClass: #OPTIONAL - OPTIONAL - the class for the section the name will be used also
+  sectionID: #OPTIONAL - OPTIONAL - the class for the section the name will be used also
+  # WRAPPER for DIVS
+  wrapperDivClass: #OPTIONAL -  group multiple divs with components in one div 
+  wrapperDivId: #OPTIONAL -  group multiple divs with components in one div 
+  divs:
+    - divClass: #OPTIONAL - DEfault yes - if no, no wrapper will be printed
+      divs:
+       - class: logo
+         components:
+          - component: logo.html
+            data:
+            image: http://www.getmdl.io/templates/android-dot-com/images/android-logo.png
+       - class: menu
+         components:
+           - component: mdl/menu.html
+             data:
+             content-type: menu
+       - class: search
+         components:
+           - component: mdl/search-bar.html
+       - class: dots-menu
+         components:
+           - component: mdl/dots-menu.html
+    - divClass:            
+      components:
+       - component: post.html
+         data:
+           post-title: test title #the title of the post in a collection or the header in yaml file
+           content-type: test #aka yamkl file or colletion
+           data-type: test # only if it is about yaml file
+    - divClass:            
+      components:
+       - component: posts-list.html
+         data:
+          view: masonry # if nill nothing happens if tru prints div.masonry-grid-sizer
+          groupdiv: #Group html element of compoennt use list or div or nothing 
+          content-type: slogan
+          data-type: data-list #if empty it means collection oherwise it means data
+          fields:
+           - field: title
+             data:
+               class: android-font android-slogan
+           - field: subtitle
+             data:
+               class: android-font android-sub-slogan
+           - field: link
+             data:
+              class: android-font android-create-character
+              image: http://www.getmdl.io/templates/android-dot-com/images/andy.png
+              imgalt: test
+              path: index.html
+              label: create your android character

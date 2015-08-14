@@ -1,0 +1,19 @@
+---
+---
+     .{{ site.data.header.name }} {   
+        @include container;
+        {% for div in site.data.header.divs %}
+         {% if div.class == "logo" %}
+           .{{ div.class }} {
+            @include span ( {{ div.width}} of {{ site.data.header.container-width }} );
+           }
+              {% else %}
+           .{{ div.class }} {
+               @include span ( {{ div.width}} of {{ site.data.header.container-width }} );
+                  .menu-item {
+                     @include gallery ( {{ div.menu-limit }} of {{ site.data.header.container-width }} );
+                 }
+           }
+            {% endif %}
+        {% endfor %}
+     }

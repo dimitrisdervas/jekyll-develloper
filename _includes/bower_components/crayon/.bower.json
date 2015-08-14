@@ -36,6 +36,5 @@
   },
   "_source": "git://github.com/riccardoscalco/crayon.git",
   "_target": "*",
-  "_originalSource": "crayon",
-  "_direct": true
+  "_originalSource": "crayon"
 }

@@ -1,0 +1,49 @@
+---
+---
+
+{% for section in site.data.pages.frontpage %}
+/* TITLE */
+{% if section.title %}
+.section-title ,
+.section-title--{{ section.title }} {
+   {% if section.subtitle %}
+   .section-subtitle,
+   .section-subtitle--{{ section.subtitle }} {
+      
+   }
+   {% endif %}
+}
+{% endif %}
+
+ {% capture sectionTitleEnd %}}{% endcapture%}   
+   .{{ section.sectionClass }} {
+      .{{ section.groupDivClass }} {     
+/*               <!-- Set Current Section'S DIVS --> */ 
+                    {% for div in section.divs %} 
+         .{{ div.divClass }} {
+                           {% for component in div.components %}
+/* TITLE */
+/*CLASS*/     .{{ component.title }} {
+                           
+                        }
+/*          Check group fields HTMl element */
+                      
+              .{{ component.data.groupFieldsElementclass }} {
+ /*CLASS*/         .{{ component.data.class}} {
+                                        
+                                        {% for field in component.data.fields %}
+/*CLASS*/              .{{ field.data.class }} {
+   
+                                                      }
+                                        {% endfor %}
+                                     }
+
+                                 }
+                              {% endfor %}
+                    }
+               {% endfor %}
+          }
+      }
+  {% endfor %}
+      
+      

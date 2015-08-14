@@ -1,0 +1,17 @@
+---
+---
+{% include sass/layoutHeader.scss%}
+{% include sass/layoutFooter.scss%}
+
+{% for section in site.data.layout %}
+     .{{ section.name }} {
+        
+     
+        {% assign current-section = section.divs %}
+        {% for div in current-section %}
+           .{{ div.class }} {
+               @include span ( {{ div.width}} of {{ section.container-width }} )
+           }
+        {% endfor %}
+     }
+{% endfor %}

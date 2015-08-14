@@ -1,14 +1,6 @@
-- name: Phones
+- name: home
   url: 
-- name: Tablets
-  url: #whyus
-- name: Wear
-  url: #services
-- name: TV
-  url: #team
-- name: Auto
-  url: #testinomials
-- name: One
-  url: #contact
-- name: Play
+- name: shop
+  url: 
+- name: featured
   url: 

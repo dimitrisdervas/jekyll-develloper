@@ -1,5 +1,4 @@
 ---
-layout: compress
 ---
 
 <!DOCTYPE html>
@@ -13,11 +12,13 @@ layout: compress
                   {% include basic_components/page.html yaml-file='header' %}       
                   
                   {{ content }}
-                  
-                  {% include basic_components/footer.html  %}
+                                  
+                   {% include basic_components/page.html yaml-file='footer' %}
+            
 
                </div>
- 
+            <script type="text/javascript" src="{{ site.baseurl }}/js/components.js"></script> 
+            {% include basic_components/perpage_plugins.html %}
   </body>
 
 </html>

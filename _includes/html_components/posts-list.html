@@ -1,20 +1,29 @@
-<!-- Check the content type - Datat or Collections - Posts -->
+<!-- Check the content type - Data or Collections - Posts -->
    {% include html_components/component_includes/componentContentType.html %}
-<!-- COMPONENT OPTIONS -->
-   {% include html_components/component_includes/componentDivOptions.html %}
-<!-- COMPONENT WRAPPER DIV -->
-   <div {{ component-id }} {{ component-class }} {{ component-theme }} >
+
+      
 <!-- MASONRY -->
    {% include html_components/component_includes/div-masonry-sizer.html %}
-<!-- Check the group div html element -->
-   {% include html_components/component_includes/componentGroupDiv.html %}<!-- If list       -->
-     {{ groupdiv-ul }}
+      
+<!-- Check the group  html element -->      
+      {% case include.component-data.groupFieldsElement %}
+            {% when 'div' %}
+               {% capture groupdivDiv %}<div class="{{ include.component-data.groupFieldsElementClass }}" >{% endcapture%}
+               {% capture groupdivDivEnd %}</div>{% endcapture%}
+            {% else %}
+               {% capture groupdivUl %}<ul>{% endcapture%}
+               {% capture groupdivLi %}<li class="{{ include.component-data.groupFieldsElementClass }}" >{% endcapture%}
+               {% capture groupdivLiEnd %}</li>{% endcapture%}
+               {% capture groupdivUlEnd %}</ul>{% endcapture%}      
+       {% endcase %}
+     {{ groupdivUl }}
+      
 <!-- Loop through the posts and set a limit if there it exists -->
    {% for post in posts limit:{{include.component-data.limit}} %} 
-<!--  IF div -->
-     {{ groupdiv-div }} 
+<!--  IF div -->  
+      {{ groupdivDiv }}
 <!-- If list -->
-     {{ groupdiv-li }}
+     {{ groupdivLi }}
 <!--  If there is grouping div got fields -->
            {% if include.component-data.group != nill  %}
               {% assign groups = include.component-data.group %}
@@ -33,9 +42,8 @@
 <!--  END IF to check for GROUP -->
            {% endif %}
 <!--    END Component HTML WRAPPER ELEMENT -->
-         {{ groupdiv-li-end }}
-         {{ groupdiv-div-end }}
+         {{ groupdivLiEnd }}
+         {{ groupdivDiv }}
 <!-- End loop in posts -->
       {% endfor %} 
-   {{ groupdiv-ul-end }}
-</div>
+   {{ groupdivUlEnd }}

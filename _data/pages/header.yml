@@ -1,10 +1,20 @@
 - section: header
   name: header
-  sectionClass: jekeo-header
+  sectionClass: snipcart-header
   divs:
+   - divClass: menu
+     components:
+       - component: menu.html
+         data:
+          content-type: menu
+          data-type: data-list
    - divClass: logo
      components:
        - component: logo.html
          data:
-           text: jekeo
+           text: Bullyland
+   - divClass: search
+     components:
+          
+     
   

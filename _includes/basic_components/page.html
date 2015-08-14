@@ -2,69 +2,64 @@
 {% assign htmlPage = include.yaml-file %}
 <!-- Loop through the page .yml file to create the html -->
 {% for section in site.data.pages.[htmlPage] %}
-
 <!-- CASES SECTION NAME -->
-<!-- Check for custom staff -->
-{% case section.name %}
-<!-- Check for hr section -->
-   {% when 'hr'%}
-         <hr>
-<!-- Check for custom html section -->
-   {% when 'custom' %}           
-         {% include {{section.path}} %}
-<!-- End section.name case -->
-{% else %}
+   <!-- Check for custom staff -->
+   {% case section.name %}
+   <!-- Check for hr section -->
+      {% when 'hr'%}   <hr>
+   <!-- Check for custom html section -->
+      {% when 'custom' %}   {% include {{section.path}} %}
+   <!-- End section.name case -->
+   {% else %}
          <!-- SECTION TITLE -->
          {% include basic_components/pageCases/pageSectionTitle.html %}
-         <!-- Set Section name -->
-         <{{section.section}} class="{{ section.sectionClass }}">              
-         <!-- Set Current Section to check for divs to create -->
-                    {% assign currentSection = section.divs %}
-         <!-- Loop through the divs to create them -->
-                    {% for div in currentSection %}    
-         <!-- CheckIF there is group div -->
-                          {% if div.data == 'group' %}
-                                   {% assign groupDivs = div.divs %}
-                                      <div class="{{ div.divClass }}">
-                                         {% for div in groupDivs %}
-                                            <div class="{{ div.divClass }}">
-                                            {% include basic_components/pageCases/pageComponents.html %}  
-                                            </div>
-                                            {% endfor %}
-                                      </div>
-                           {% else %}
-         <!--            Check if we should print the div -->
-                              {% if div.divClass != empty %}
+
+         <{{section.section}} id="{{ section.sectionId }}" class="{{ section.sectionClass }}" {{sectionClassWrapper}} >              
+       
+       <!-- Set GROUP DIV Class ID -->
+                     <!-- CheckIF there is group div -->
+            {% if section.wrapperDivClass %}
+                  {% capture groupDiv %}<div id="{{ section.wrapperDivId }}"class="{{ section.wrapperDivClass }}">{% endcapture%}
+                  {% capture groupDivEnd %}</div>{% endcapture%}
+               <!-- EndIF check for group div -->
+               {% endif%}
+            
+            {{ groupDiv }}
+            
+              <!-- Set Current Section'S DIVS -->
+                    {% assign currentSectionDivs = section.divs %}
+            <!-- Loop through the divs to create them -->         
+                    {% for div in currentSectionDivs %}     
+                                 {% if div.divClass == 'no' %}
                              <!-- Set the Css class for the div -->
-                                    <div class="{{ div.divClass }}">
+                                         {% capture divClassElement %}<div divClass class="{{ div.divClass }}">{% endcapture %}
+                                         {% capture divClassElementEnd %}</div>{% endcapture %}                         
+                                       {% endif %}
+                           {{ divClassElement }}
                <!-- Print the divs components -->
                                       <!-- Check inside for the html components for the current div -->
                                       {% assign currentDiv = div.components %} 
+               <!-- LOOP THROUGH THE COMPONENTS OF THE CURENT DIV -->
                                       {% for htmlComponent in currentDiv %}
                   <!-- CheckIF we have custom html code code - short e.x. <i class="material-icons">menu</i> -->
                                          {% if htmlComponent.html %}{{ div.html }}{% endif %}
                   <!-- If The html Component is not empty -->
                                          {% if htmlComponent.component %}
-                  <!-- Capture the html component template -->
-                                               {% capture htmlComponentHtml %}html_components/{{ htmlComponent.component }}{% endcapture %}  
                   <!-- Include the html component template and bring it's details -->
                                                {% include basic_components/pageCases/pageComponents.html component-data=htmlComponent.data %} 
-                  <!-- End if checking if there is a component                  -->
+                  <!-- EndIF htmlComponent.component -->
                                             {% endif %}
                   <!--  End Component Loop -->
                                          {% endfor %}
                <!-- EndDIV for simple divClass -->
-                                       </div>
-                                 {% else %}
-                                       {% include basic_components/pageCases/pageComponents.html %}
-                                    {% endif%}
-               <!-- EndIF check for group div -->
-                            {% endif%}
+                                    {{ divClassElementEnd }}
             <!--  EndDIVS loop -->
-                          {% endfor %}        
+                          {% endfor %}  
+            <!--ENDgroupDIV -->
+                  {{ groupDivEnd }}
          <!-- Close section -->
                    </{{section.section}}>
          <!-- EndSection name cases -->
-{% endcase %}
+      {% endcase %}
 <!-- End loop in sections -->
    {% endfor %}

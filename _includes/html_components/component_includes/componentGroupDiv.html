@@ -1,4 +1,4 @@
-   {% case include.component-data.groupdiv %}
+{% case include.compdata %}
       {% when 'div' %}
          {% capture groupdiv-div %}<div>{% endcapture%}
          {% capture groupdiv-div-end %}</div>{% endcapture%}
@@ -8,4 +8,4 @@
          {% capture groupdiv-li-end %}</li>{% endcapture%}
          {% capture groupdiv-ul-end %}</ul>{% endcapture%}
       {% else%}
-         {% endcase %}
+ {% endcase %}

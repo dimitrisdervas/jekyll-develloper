@@ -1,8 +1,13 @@
 <!-- Loop through the images and set limit -->
    <div class="post-image {{ include.field_Data.class }}" data-eq-pts="{{ include.field_Data.eqs }}">
-      {% if include.field_Data.link == post %}
-               <a href="{{ site.baseurl}}{{ post.url }}"> 
-            {% endif %}
+      
+      {% case include.field_Data.link %}
+      {% when 'posts' %}
+            <a href="{{ site.baseurl}}{{ post.url }}"> 
+      {% when 'products' %}
+             <a href="{{ site.baseurl}}products/{{ post.sku }}.html">         
+      {% endcase %}
+                
      <img src="{{ include.field_Data.images_path }}{{ post.image }}" alt="{{ post.alt }}">
                  
       </a>           

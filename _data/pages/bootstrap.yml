@@ -1,0 +1,30 @@
+- section: section
+  sectionClass: container theme-showcase
+  divs:
+    - divClass: bootstrap-jumbotron
+      components:
+       - component: post.html
+         data:
+          title: JUMBOTRON
+          content-type: bootstrap
+          class: jumbotron
+          post-title: jumbotron
+          data-type: data-list
+          fields:
+            - field: title
+              data:
+               class: wow slideInUp
+            - field: text
+    - divClass: bootstrap-button
+      components:    
+       - component: posts-list.html
+         data:
+          title: Buttons
+          content-type: bootstrap-links
+          class: buttons
+          data-type: data-list
+          fields:
+            - field: link
+              data:
+               button: yes
+                   

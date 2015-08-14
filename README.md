@@ -3,7 +3,7 @@ build websites fast - for devellopers
 
 # First step
 Decide the content types
-ex. http://html.blahlab.com/jekeo/
+ex. https://canopy.co/
 If each post must be shown in a separate page - url - permalink then you must use collections
 
 ## Content Types
@@ -40,6 +40,8 @@ If each post must be shown in a separate page - url - permalink then you must us
    - name / company / text / image
 
 #**TODO autocreate**
+GULP on creat enew page create new roout in _data/routes
+pageCOmponentsContentype - canno put a file inside a flder two deeep ex. _data/content/bootstrap/content.yml - doesnot work
 Global parapmeter for images path in config.yml
 Pagination - to ietms ex portofolio -item - newxt project = solution to read a json and based oth current id to find next links ex. react - ejs
 CSS - write always position e.x. float with tabs inwardin code

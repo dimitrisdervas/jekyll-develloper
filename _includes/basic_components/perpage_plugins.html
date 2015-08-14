@@ -1,0 +1,25 @@
+<!-- PER PAGE -->
+<!--    //   JAVASCRIPT PLUGIN
+Find all the yaml files configuration files in _data/pages -->
+             {% for section in site.data.pages[page.confFile] %}
+              <!-- Set Current Section'S DIVS -->
+                    {% assign currentSectionDivs = section.divs %}    
+                    {% for div in currentSectionDivs %} 
+<!-- Current Component -->
+                           {% assign currentComponents = div.components %}
+                           {% for component in currentComponents %}
+                              {% if  component.data.javascript-plugin %}
+                              <!-- Cases for The JAVASCRITP PLUGINS -->
+                                 {% case component.data.javascript-plugin %}                                         
+                                       {% when 'map' %}
+                                       {% when 'countTo' %}    
+                                       {% when 'listjs' %}  
+                                       {% when 'masonry' %}     
+                                       {% when 'owl-carousel' %}
+                                          {% include basic_components/javascriptPluginsCases/owlSlideshow.js %}
+                                       {% endcase %}
+                                 {% endif %}
+                        {% endfor %}
+ 
+                  {% endfor %}
+               {% endfor %}

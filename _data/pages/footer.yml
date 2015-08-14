@@ -1,0 +1,8 @@
+- section: footer
+  sectionClass: footer
+  divs:
+   - divClass: footer-first section
+   - divClass: footer-second section
+   - divClass: footer-third section
+   - divClass: footer-fourth section
+

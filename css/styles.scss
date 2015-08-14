@@ -13,19 +13,15 @@
 /* materializecss.com */
 /* @import "bower_components/materialize/sass/materialize"; */
 
-/* Components */
+/* FONTS */
 @import "icon-fonts/font-awesome-4.4.0/scss/font-awesome";
 @import "fonts/et-line/style.css";
 /*  */
-/* OWL v2 slideheshow */
+/* COMPONENTS */
 /*  */
 @import 
-   "owl-slideshow/owl.carousel.css",
-   "owl-slideshow/owl.theme.default.css",
-   "owl-slideshow/owl.theme.green.css"
+   "components.css"
    ;
-@import "html_components/slideshow/slideshow";
-
 /*  */
 /* Layouts */
 /*  */
@@ -52,6 +48,4 @@
       "styles/stylesFooter"
    ;
       
-
-
 

@@ -17,6 +17,8 @@
     "normalize.css": "~3.0.3",
     "materialize": "~0.97.0",
     "material-design-lite": "~1.0.2",
-    "crayon": "*"
+    "crayon": "*",
+    "foundation": "~5.5.2",
+    "bootstrap": "~3.3.5"
   }
 }
