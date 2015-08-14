@@ -1,6 +1,5 @@
-<<<<<<< HEAD
-# jekyll-scaffold
-build websites fast - for devellopers
+# jekyll-develloper
+Create fast static sites for devellopeers only
 
 # First step
 Decide the content types
@@ -57,7 +56,3 @@ use react or ejs template to make pagination and blog group by
 make the photos application
 make the forms application
 fix bacon jquery to fill posts
-=======
-# jekyll-develloper
-Create fast static sites for devellopeers only
->>>>>>> ec9921ef02b8c982cfc51ccfde2d04cb6cfe80a6
