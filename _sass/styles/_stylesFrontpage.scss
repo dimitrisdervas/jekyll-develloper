@@ -7,7 +7,7 @@ section.aboutus {
    background-color: #fff;
 }
 
-.clients ul li {
+ul li {
    @include gallery ( 4 of 12 );
 }
 

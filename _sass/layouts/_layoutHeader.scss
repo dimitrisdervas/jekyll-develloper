@@ -1,21 +1,37 @@
-.header {   
-        @include container( $header );        
-           .left {
-               @include span ( 5 of 12 first );
-                  .menu-item {
-                     @include gallery ( 4 of 12 );
+/* Flex MENU */
+/* http://codepen.io/terrymun/pen/cKxwu */
+.header-wrapper {
+   @include full;
+   .snipcart-header {
+      @include layout( $header );
+      @include container( 1170px );
+     padding: 10px 0;
+            .menu {
+               @include span( 1 first );
+                  }
+           .logo {  
+               @include span( 1 at 2 );
+                     a {
+      /*                   Important to make the link as tall as the image - the float:left property */
+                     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6%2FNlyAAAAAXN…dHK83A30yACTABJsAEmAATYAJMgAkwASbABJgAE2ACpgn8AifqWMagHEobAAAAAElFTkSuQmCC);
+                      background-size: 32px;
+                      background-repeat: no-repeat;
+                      background-position: center;
+                      height: 100%;
+                      width: 100%;
+                      -webkit-transform: translateY(0);
+                      -ms-transform: translateY(0);
+                      transform: translateY(0);
+                      -webkit-transition: all 0.1s ease-out;
+                      transition: all 0.1s ease-out;
+                     }
                  }
-           }
-           .logo {
-            @include span ( 2 at 6 of 12);
-           }
-           .right {
-               @include span ( 5 of 12 last );
-                  .menu-item {
-                     @include gallery ( 4 of 12 );
+            .searchbar {
+
                  }
-           }
-            
-        
-     }
+            .checkout {
+               @include span( 1 last );
+                 }
+      }                 
+   }
 

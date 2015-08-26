@@ -1,3 +1,13 @@
 
 {{ page.title }}
 {{ page.price }}
+ <a href="#"
+    class="snipcart-add-item"
+    data-item-id="{{ page.sku }}"
+    data-item-name="{{ page.title }}"
+    data-item-price="{{ page.price }}"
+    data-item-weight="20"
+    data-item-url="{{site.url}}/products/{{ page.sku }}.html"
+    data-item-description="{{ page.description }}">
+    Buy Snipcart
+</a>

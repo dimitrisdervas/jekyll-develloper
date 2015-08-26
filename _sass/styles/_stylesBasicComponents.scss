@@ -1,17 +1,13 @@
 body {
-    background: #fff;
-    color: #999;
-    padding: 0;
+    background: #F2F2F2;
+    height: 100%;
     margin: 0;
-    font-family: Raleway,"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
-    font-weight: normal;
-    font-style: normal;
-    line-height: 160%;
-    position: relative;
-    cursor: auto;
-}
-body {
-   padding: 0 60px;
+    padding: 0;
+    text-rendering: optimizeLegibility;
+    font-weight: 500;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    color: #525252;
 }
 html, body {
     font-size: 14px;

@@ -1,6 +1,7 @@
 - section: header
   name: header
-  sectionClass: snipcart-header
+  sectionClass: header-wrapper
+  wrapperDivClass: snipcart-header
   divs:
    - divClass: menu
      components:
@@ -8,6 +9,7 @@
          data:
           content-type: menu
           data-type: data-list
+          icon: et-line
    - divClass: logo
      components:
        - component: logo.html
@@ -15,6 +17,10 @@
            text: Bullyland
    - divClass: search
      components:
+   - divClass: checkout
+     components: 
+       - component: checkoutLink.html
+       - component: cart.html
           
      
   

@@ -1,7 +1,7 @@
 ---
 ---
 
-{% for plugin in site.data.{{ site.pluginsSourceFile}} %}
+{% for plugin in site.data.pluginsSourceFiles.jsSourceFiles %}
    {% if plugin.state == 'active' %}
          {% for fileCss in plugin.css %}
               {% include {{ fileCss.css }} %} 

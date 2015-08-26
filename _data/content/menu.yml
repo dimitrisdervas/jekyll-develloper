@@ -1,6 +1,9 @@
 - name: home
   url: 
+  icon: house
 - name: shop
   url: 
+  icon: compass
 - name: featured
   url: 
+  icon: star

@@ -1,53 +1,26 @@
 /* Flex MENU */
 /* http://codepen.io/terrymun/pen/cKxwu */
 .header-wrapper {
+   background: #ffffff;
    .header {
      padding: 10px 0;
-           .logo {
-              height: 100%;
+           .logo {              
                a {
 /*                   Important to make the link as tall as the image - the float:left property */
-                  padding: 0;
-                height: 40px;
-                float: left;
+               background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6%2FNlyAAAAAXN…dHK83A30yACTABJsAEmAATYAJMgAkwASbABJgAE2ACpgn8AifqWMagHEobAAAAAElFTkSuQmCC);
+                background-size: 32px;
+                background-repeat: no-repeat;
+                background-position: center;
+                height: 100%;
+                width: 100%;
+                -webkit-transform: translateY(0);
+                -ms-transform: translateY(0);
+                transform: translateY(0);
+                -webkit-transition: all 0.1s ease-out;
+                transition: all 0.1s ease-out;
                }
            }
-           .menu-right {
-              float: right;
-              padding: 10px 0;
-              .menu-2 {
-                   display: flex;
-                  .menu-item {
-                   display: flex;
-                   flex-grow: 1;
-                   align-items: center;
-                   padding: 0 15px;                     
-                  }
-                 .menu-item a {
-                    display: flex;           
-                    flex-grow: 1;
-                    justify-content: center;
-                   font-family: 'Open Sans',sans-serif;
-                   font-size: 13px;
-                   font-weight: 600;
-                   text-transform: uppercase;
-                   color: #bdbdbd;
-                   padding: 0;
-                   padding-top: 0;
-                   padding-bottom: 0;
-                   display: inline-block;
-                   -webkit-transition: all .3s;
-                   -moz-transition: all .3s;
-                   -ms-transition: all .3s;
-                   -o-transition: all .3s;
-                   transition: all .3s;
-                 }
-                  .menu-item a:hover {
-                      background: #f9f9f9;
-                      color: #888;
-                    }
+        
                  
-              }                 
-           }
-     }
+   }                 
 }

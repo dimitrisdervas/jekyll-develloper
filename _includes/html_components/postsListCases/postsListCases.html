@@ -28,7 +28,8 @@
                                 {% include html_components/postsListCases/countCase.html field_Data=field.data field_Field=field.field %}        
    <!-- VIDEO  -->    
                               {% when 'video' %}
-                                {% include html_components/postsListCases/videoCase.html field_Data=field.data field_Field=field.field %}        
+                                {% include html_components/postsListCases/videoCase.html field_Data=field.data field_Field=field.field %}  
+
                               {% else %}
 <!-- Print every field as separate div -->
                            <div class="{{field.field}} {{ field.data.class }}">

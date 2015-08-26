@@ -1,5 +1,5 @@
 - section: #OPTIONAL- choose html element header / footer/ section / div / or
-  customHtmlName: services # OPTIONAL OPTIONAL custom  without the wrapper div or hr
+  customHtmlName:  # OPTIONAL OPTIONAL custom  without the wrapper div or hr
   customHtmlPath: #OPTIONAL - OPTIONAL - in case of name:custom we write th epath to html in includes for the custom code
   sectionTitle: #OPTIONAL - OPTIONAL - it will printed over the rest of the section
   data:
@@ -18,12 +18,11 @@
     separator: # separate titlr - subtitle - link
   sectionClass: #OPTIONAL - OPTIONAL - the class for the section the name will be used also
   sectionID: #OPTIONAL - OPTIONAL - the class for the section the name will be used also
-  # WRAPPER for DIVS
   wrapperDivClass: #OPTIONAL -  group multiple divs with components in one div 
   wrapperDivId: #OPTIONAL -  group multiple divs with components in one div 
   divs:
     - divClass: #OPTIONAL - DEfault yes - if no, no wrapper will be printed
-      divs:
+      divs: # group components in one more div
        - class: logo
          components:
           - component: logo.html
@@ -51,8 +50,13 @@
       components:
        - component: posts-list.html
          data:
+          title: component-title
+          groupFieldsElement: list # or div
+          groupFieldsElementClass: groupfields
+          class: component
+          id: products
+          limit: 4     
           view: masonry # if nill nothing happens if tru prints div.masonry-grid-sizer
-          groupdiv: #Group html element of compoennt use list or div or nothing 
           content-type: slogan
           data-type: data-list #if empty it means collection oherwise it means data
           fields:
@@ -67,5 +71,6 @@
               class: android-font android-create-character
               image: http://www.getmdl.io/templates/android-dot-com/images/andy.png
               imgalt: test
-              path: index.html
+              path: index.html #DEFAULT {{ post.link }} or options: posts( post.url ) /custom path e. index.html / buy - create buy button
+              button: yes #OPTIONAL if instead of link <a> you want <button> as an html element ex bootstrap
               label: create your android character

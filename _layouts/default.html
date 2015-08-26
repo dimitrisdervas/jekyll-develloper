@@ -2,11 +2,13 @@
 ---
 
 <!DOCTYPE html>
-<html>
+<html lang="gr">
 
   {% include basic_components/head.html %}
 
   <body>
+     <script type="text/javascript" src="{{ site.baseurl }}/js/components.js"></script> 
+     
          <div class="page">
 
                   {% include basic_components/page.html yaml-file='header' %}       
@@ -17,8 +19,19 @@
             
 
                </div>
-            <script type="text/javascript" src="{{ site.baseurl }}/js/components.js"></script> 
+            
+     
             {% include basic_components/perpage_plugins.html %}
+
+
+            {% include basic_components/snipcartFooter.html %}
+     
+
+
+     
+  
+<!-- //         URL PARAMETERS -->
+   
   </body>
 
 </html>

@@ -9,13 +9,12 @@ Just create a list of the posts either from a collection or a data file
 <!-- Check the content type - Datat or Collections - Posts -->
    {% include html_components/component_includes/componentContentType.html %}
 <!-- COMPONENT OPTIONS -->
-   {% include html_components/component_includes/componentDivOptions.html %}
+
 <!-- COMPONENT WRAPPER DIV -->
    <div {{ component-id }} {{ component-class }} {{ component-theme }} >
 <!-- MASONRY -->
    {% include html_components/component_includes/div-masonry-sizer.html %}
 <!-- Check the group div html element -->
-   {% include html_components/component_includes/componentGroupDiv.html %}<!-- If list       -->
      {{ groupdiv-ul }}
 <!-- Loop through the posts and set a limit if there it exists -->
    {% for post in posts limit:{{include.component-data.limit}} %} 

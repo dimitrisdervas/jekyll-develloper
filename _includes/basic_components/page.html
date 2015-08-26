@@ -26,21 +26,17 @@
             
             {{ groupDiv }}
             
-              <!-- Set Current Section'S DIVS -->
-                    {% assign currentSectionDivs = section.divs %}
             <!-- Loop through the divs to create them -->         
-                    {% for div in currentSectionDivs %}     
-                                 {% if div.divClass == 'no' %}
+                    {% for div in section.divs %}     
+                                 {% unless div.divClass == 'no' %}
                              <!-- Set the Css class for the div -->
-                                         {% capture divClassElement %}<div divClass class="{{ div.divClass }}">{% endcapture %}
+                                         {% capture divClassElement %}<div class="{{ div.divClass }}">{% endcapture %}
                                          {% capture divClassElementEnd %}</div>{% endcapture %}                         
-                                       {% endif %}
+                                       {% endunless %}
                            {{ divClassElement }}
-               <!-- Print the divs components -->
-                                      <!-- Check inside for the html components for the current div -->
-                                      {% assign currentDiv = div.components %} 
+
                <!-- LOOP THROUGH THE COMPONENTS OF THE CURENT DIV -->
-                                      {% for htmlComponent in currentDiv %}
+                                      {% for htmlComponent in div.components %}
                   <!-- CheckIF we have custom html code code - short e.x. <i class="material-icons">menu</i> -->
                                          {% if htmlComponent.html %}{{ div.html }}{% endif %}
                   <!-- If The html Component is not empty -->

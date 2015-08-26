@@ -15,35 +15,53 @@
 }
 {% endif %}
 
- {% capture sectionTitleEnd %}}{% endcapture%}   
+
+{% if section.sectionClass != nill %}
    .{{ section.sectionClass }} {
-      .{{ section.groupDivClass }} {     
+      {% capture sectionClassEnd %} } {% endcapture%} 
+{% endif %}
+
+{% if section.groupDivClass %}
+      .{{ section.groupDivClass }} {    
+           {% capture groupDivClassEnd %} } {% endcapture%} 
+{% endif %}
+
 /*               <!-- Set Current Section'S DIVS --> */ 
                     {% for div in section.divs %} 
          .{{ div.divClass }} {
                            {% for component in div.components %}
-/* TITLE */
-/*CLASS*/     .{{ component.title }} {
+{% if component.title %}
+    .{{ component.title }} {
                            
                         }
+{% endif %}
 /*          Check group fields HTMl element */
-                      
-              .{{ component.data.groupFieldsElementclass }} {
- /*CLASS*/         .{{ component.data.class}} {
-                                        
-                                        {% for field in component.data.fields %}
-/*CLASS*/              .{{ field.data.class }} {
-   
-                                                      }
-                                        {% endfor %}
-                                     }
+{% if component.data.groupFieldsElementClass %}                      
+              .{{ component.data.groupFieldsElementClass }} {
+ {% capture groupFieldsElementClassEnd %} } {% endcapture%} 
+{% endif %}    
+            
+{% if component.data.class %}                
+      .{{ component.data.class}} {
+{% capture componentClassEnd %} } {% endcapture%} 
+{% endif %}   
+            
 
-                                 }
+            {% for field in component.data.fields %}
+ {% if field.data.class  %}     
+          .{{ field.data.class }} {
+{% capture fieldClassEnd %} } {% endcapture%} 
+{% endif %}      
+                                                     {{ fieldClassEnd }}
+                                        {% endfor %}
+                                     {{ componentClassEnd }}
+
+                                {{ groupFieldsElementClassEnd }}
                               {% endfor %}
                     }
                {% endfor %}
-          }
-      }
+         {{ groupDivClassEnd }}
+      {{sectionClassEnd}}
   {% endfor %}
       
       

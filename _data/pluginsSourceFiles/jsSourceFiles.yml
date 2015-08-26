@@ -24,3 +24,6 @@
   js: bower_components/eq.js/dist/eq.min.js
 - name: bootstrap
   js: bower_components/bootstrap/dist/js/bootstrap.min.js
+- name: dust
+  state: active
+  js: bower_components/dustjs/dist/dust-full-0.3.0.min.js

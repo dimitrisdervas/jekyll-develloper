@@ -1,5 +1,4 @@
 - section: section
-  sectionClass: slideshow-wrapper
   title: Section Title
   subtitle: Section Subtitle
   sectionClass: sectionClass
@@ -11,7 +10,7 @@
          data:
           title: component-title
           groupFieldsElement: list
-          groupFieldsElementclass: groupfields
+          groupFieldsElementClass: groupfields
           class: component
           id: products
           limit: 4
@@ -30,4 +29,9 @@
               data:
                link: products
                class: product
+            - field: link
+              data:
+               class: snipcart
+               path: buybutton
+                
         

@@ -12,6 +12,17 @@
                            {% case include.field_Data.path %}
                                 {% when 'posts' %}
                                      <a href="{{ site.baseurl}}{{ post.url }}">
+                                {% when 'buybutton' %}
+                                        <a href="#"
+                                           class="snipcart-add-item"
+                                           data-item-id="{{ post.sku }}"
+                                           data-item-name="{{ post.title }}"
+                                           data-item-price="{{ post.price }}"
+                                           data-item-weight="20"
+                                           data-item-url="{{ site.url }}{{ site.baseurl }}"
+                                           data-item-description="{{ post.description }}">
+                                           Buy Snipcart
+                                       </a>
                                 {% when nill %}
                                      <a href="{{ site.baseurl}}{{ post.link }}">  
                                 {% else %}

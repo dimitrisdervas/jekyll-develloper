@@ -1,6 +1,3 @@
-<!-- Check inside for the html components for the current div -->
-                    {% assign currentDiv = div.components %} 
-                    {% for htmlComponent in currentDiv %}
 <!-- CheckIF we have custom html code code - short e.x. <i class="material-icons">menu</i> -->
 <!-- HTML COMPONENT - INLINE HTML CODE -->
                        {% if htmlComponent.html %}{{ div.html }}{% endif %}
@@ -31,5 +28,3 @@
                            </div>
 <!-- End if checking if there is a component                  -->
                           {% endif %}
-<!--  End Component Loop -->
-                       {% endfor %}
